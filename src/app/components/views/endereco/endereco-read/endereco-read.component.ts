@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Endereco } from '../endereco.model';
 import { EnderecoService } from '../endereco.service';
 
@@ -13,7 +14,7 @@ export class EnderecoReadComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'logradouro', 'bairro', 'numero','cep','usuarios','acoes'];
 
-  constructor(private service: EnderecoService) {
+  constructor(private service: EnderecoService, private router: Router) {
 
    }
 
@@ -29,6 +30,8 @@ export class EnderecoReadComponent implements OnInit {
     })
   }
 
-
+  navegarParaEnderecoCreate(){
+      this.router.navigate(["endereco/create"])
+  }
 
 }

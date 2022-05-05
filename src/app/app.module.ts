@@ -17,6 +17,12 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import { EnderecoReadComponent } from './components/views/endereco/endereco-read/endereco-read.component';
+import { EnderecoCreateComponent } from './components/views/endereco/endereco-create/endereco-create.component';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -27,7 +33,8 @@ import { EnderecoReadComponent } from './components/views/endereco/endereco-read
     FooterComponent,
     NavComponent,
     HomeComponent,
-    EnderecoReadComponent
+    EnderecoReadComponent,
+    EnderecoCreateComponent
    
   ],
   imports: [
@@ -41,7 +48,11 @@ import { EnderecoReadComponent } from './components/views/endereco/endereco-read
     MatCardModule,
     MatTableModule,
     HttpClientModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSnackBarModule
     
   ],
   providers: [],

@@ -2,7 +2,7 @@
     <div class="title">
         <h1>Endereco</h1>
     </div>
-    <button class="mat-elevation-z8" mat-stroked-button color="primary">NOVO ENDEREÇO</button>
+    <button class="mat-elevation-z8" (click)="navegarParaEnderecoCreate()" mat-stroked-button color="primary">NOVO ENDEREÇO</button>
 
     <div class="mat-elevation-z8 content-table">
         <table class="table" mat-table [dataSource]="enderecos">
