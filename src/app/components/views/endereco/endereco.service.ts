@@ -24,11 +24,28 @@ export class EnderecoService {
     return this.http.post<Endereco>(url,endereco)
   }
 
+  delete(id: String):Observable<void>{
+    const url = `${this.baseUrl}/api/endereco/delete/id/${id}`
+    return this.http.delete<void>(url)
+  }
+
+  findById(id: String):Observable<Endereco>{
+    const url = `${this.baseUrl}/api/endereco/id/${id}`
+    return this.http.get<Endereco>(url)
+  }
+
+  updateEndereco(endereco: Endereco):Observable<Endereco>{
+    const url = `${this.baseUrl}/api/endereco/update/id/${endereco.id}`
+    return this.http.put<Endereco>(url,endereco)
+  }
+
   mensagem(str: String):void{
     this._snack.open(`${str}`,'OK',{
-      horizontalPosition: 'end',
-      verticalPosition: 'top',
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
       duration: 1000
     })
   }
+
+
 }

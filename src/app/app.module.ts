@@ -22,6 +22,9 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { EnderecoDeleteComponent } from './components/views/endereco/endereco-delete/endereco-delete.component';
+import { EnderecoUpdateComponent } from './components/views/endereco/endereco-update/endereco-update.component';
+import { ClienteReadAllComponent } from './components/views/cliente/cliente-read-all/cliente-read-all.component';
 
 
 
@@ -34,7 +37,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     NavComponent,
     HomeComponent,
     EnderecoReadComponent,
-    EnderecoCreateComponent
+    EnderecoCreateComponent,
+    EnderecoDeleteComponent,
+    EnderecoUpdateComponent,
+    ClienteReadAllComponent
    
   ],
   imports: [
