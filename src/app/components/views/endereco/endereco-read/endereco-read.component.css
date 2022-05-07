@@ -17,6 +17,7 @@
 
 button{
     margin-bottom: .8rem;
+    
 }
 
 .usuarios{
@@ -39,4 +40,13 @@ button{
 
 .edit{
     color:rgb(208, 151, 6)
+}
+
+.loading-spinner{
+    padding: 25px;
+    background: rgba(188, 183, 183, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }

@@ -16,7 +16,7 @@ export class EnderecoService {
 
   findaAll():Observable<Endereco[]>{
     const url = `${this.baseUrl}/api/enderecos`
-    return this.http.get<Endereco[]>(url)
+    return this.http.get<Endereco[]>(url);
   }
 
   create(endereco: Endereco):Observable<Endereco>{

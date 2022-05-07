@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -25,8 +26,17 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { EnderecoDeleteComponent } from './components/views/endereco/endereco-delete/endereco-delete.component';
 import { EnderecoUpdateComponent } from './components/views/endereco/endereco-update/endereco-update.component';
 import { ClienteReadAllComponent } from './components/views/cliente/cliente-read-all/cliente-read-all.component';
-
-
+import { AgendamentoReadComponent } from './components/views/agendamento/agendamento-read/agendamento-read.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AgendamentoCreateComponent } from './components/views/agendamento/agendamento-create/agendamento-create.component';
+import { ClienteReadComponent } from './components/views/cliente/cliente-read/cliente-read.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ServicoReadComponent } from './components/views/servico/servico-read/servico-read.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -40,7 +50,11 @@ import { ClienteReadAllComponent } from './components/views/cliente/cliente-read
     EnderecoCreateComponent,
     EnderecoDeleteComponent,
     EnderecoUpdateComponent,
-    ClienteReadAllComponent
+    ClienteReadAllComponent,
+    AgendamentoReadComponent,
+    AgendamentoCreateComponent,
+    ClienteReadComponent,
+    ServicoReadComponent
    
   ],
   imports: [
@@ -58,9 +72,19 @@ import { ClienteReadAllComponent } from './components/views/cliente/cliente-read
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    MatExpansionModule,
+    CommonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
+    
     
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })

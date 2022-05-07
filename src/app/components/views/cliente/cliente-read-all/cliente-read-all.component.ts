@@ -10,7 +10,7 @@ import { ClinteService } from '../clinte.service';
 })
 export class ClienteReadAllComponent implements OnInit {
 
-  displayedColumns: string [] = ["id","nome","data_nascimento","usuarios","acoes"];
+  displayedColumns: string [] = ["id","nome","dataNascimento","usuarios","acoes"];
   id_end:String = ''
   clientes:Cliente[] = []
 

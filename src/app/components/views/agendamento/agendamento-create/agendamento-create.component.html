@@ -1,0 +1,68 @@
+
+<div style="width: 95%; margin: 50px auto;" class="mat-elevation-z4">
+    
+    <mat-vertical-stepper 
+    style="text-align: start;"
+    
+    #stepper
+    >
+        <mat-step [stepControl]="formulario" errorMessage="O nome é Obrigatório">
+        <form [formGroup] = "formulario">
+            <ng-template matStepLabel>Nome</ng-template>
+            <mat-form-field appearence="fill">
+                <mat-label>Nome</mat-label>
+                <input type="date" matInput placeholder="Digite seu nome" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <div>
+                <button
+                mat-raised-button
+                matStepperNext
+                >Proximo</button>
+             </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <form>
+
+                <ng-template matStepLabel>Endereco</ng-template>
+
+            <mat-form-field appearence="fill">
+                <mat-label>Endereco</mat-label>
+                <input  type="text" matInput placeholder="Digite seu endereco"  >
+            </mat-form-field>
+            
+            <div>
+                <button
+                mat-raised-button
+                matStepperPrevious
+                >Anterior</button>
+                <button
+                mat-raised-button
+                matStepperNext
+                >Proximo</button>
+            </div>
+        </form>
+        </mat-step>
+        <mat-step>
+            <form>
+                
+            </form>
+
+            <p>Done.</p>
+
+            <div>
+                <button
+                mat-raised-button
+                matStepperPrevious
+                >Anterior</button>
+                <button
+                mat-button
+                routerLink="/"
+                >Reset</button>
+            </div>
+
+        </mat-step>
+    
+    </mat-vertical-stepper>
+
+</div>

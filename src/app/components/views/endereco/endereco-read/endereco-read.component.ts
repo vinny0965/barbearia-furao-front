@@ -26,6 +26,7 @@ export class EnderecoReadComponent implements OnInit {
   findAll(){
     this.service.findaAll().subscribe(resposta =>{
       this.enderecos = resposta;
+      console.log(this.enderecos)
     })
   }
 
