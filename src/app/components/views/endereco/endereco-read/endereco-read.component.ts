@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinner, NgxSpinnerService } from 'ngx-spinner';
 import { Endereco } from '../endereco.model';
 import { EnderecoService } from '../endereco.service';
 
@@ -14,19 +15,26 @@ export class EnderecoReadComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'logradouro', 'bairro', 'numero','cep','usuarios','acoes'];
 
-  constructor(private service: EnderecoService, private router: Router) {
+  constructor(private service: EnderecoService, private router: Router, private spinner: NgxSpinnerService) {
 
    }
 
-  ngOnInit(): void {
-    this.findAll();
+   ngOnInit() {
+     this.findAll();
+    /** spinner starts on init */
+    this.spinner.show();
 
+    //   setTimeout(() => {
+    //   /** spinner ends after 5 seconds */
+    //   this.spinner.hide();
+    //  }, 5000);
   }
+
 
   findAll(){
     this.service.findaAll().subscribe(resposta =>{
       this.enderecos = resposta;
-      console.log(this.enderecos)
+    
     })
   }
 

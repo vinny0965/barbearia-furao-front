@@ -1,8 +1,9 @@
 <div class="content">
+  <div *ngIf="agendamentos.length >0; else loading">
     <div class="title">
         <h1>Agendamentos</h1>
     </div>
-    <button class="mat-elevation-z8"  routerLinkActive="router-link-active"  mat-flat-button color="primary">NOVO AGENDAMENTO</button>
+    <button class="mat-elevation-z8" (click)="navegarParaAgendamentoCreate()"  routerLinkActive="router-link-active"  mat-flat-button color="primary">NOVO AGENDAMENTO</button>
 
     <div class="mat-elevation-z8 content-table">
         <table class="table" mat-table [dataSource]="agendamentos">
@@ -52,8 +53,19 @@
             <ng-container matColumnDef="servico">
               <th mat-header-cell *matHeaderCellDef> Servico </th>
               <td mat-cell *matCellDef="let row"> {{row.servico}}
-                <a class="usuarios" routerLink="{{row.id_cliente}}/clientes">
+                <a class="usuarios" routerLink="servicos/{{row.id_servico}}/view">
                   <i class="material-icons">card_travel</i>   
+                </a>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="acoes">
+              <th class="math-reader" mat-header-cell *matHeaderCellDef>Ações</th>
+              <td mat-cell *matCellDef="let row">
+                <a class="edit" routerLink="update/id/{{ row.id }}">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a class="delete" routerLink="delete/id/{{ row.id }}">
+                  <i class="material-icons">delete</i>
                 </a>
               </td>
             </ng-container>
@@ -62,4 +74,8 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
     </div>
+    </div>
 </div>
+<ng-template #loading>
+  <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" >Carregando...</p></ngx-spinner>
+</ng-template>

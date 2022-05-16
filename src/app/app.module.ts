@@ -33,10 +33,30 @@ import { AgendamentoCreateComponent } from './components/views/agendamento/agend
 import { ClienteReadComponent } from './components/views/cliente/cliente-read/cliente-read.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { ServicoReadComponent } from './components/views/servico/servico-read/servico-read.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ServicoReadAllComponent } from './components/views/servico/servico-read-all/servico-read-all.component';
+import { ClienteCreateComponent } from './components/views/cliente/cliente-create/cliente-create.component';
+import { AdministradorReadAllComponent } from './components/views/administrador/administrador-read-all/administrador-read-all.component';
+import { ServicoReadAdmComponent } from './components/views/servico/servico-read-adm/servico-read-adm.component';
+import { CupomReadAdmComponent } from './components/views/cupom/cupom-read-adm/cupom-read-adm.component';
+import { CupomCreateComponent } from './components/views/cupom/cupom-create/cupom-create.component';
+import { CupomUpdateComponent } from './components/views/cupom/cupom-update/cupom-update.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CupomDeleteComponent } from './components/views/cupom/cupom-delete/cupom-delete.component';
+import { ServicoCreateComponent } from './components/views/servico/servico-create/servico-create.component';
+import { ServicoUpdateComponent } from './components/views/servico/servico-update/servico-update.component';
+import { ServicoDeleteComponent } from './components/views/servico/servico-delete/servico-delete.component';
+import { AdministradorCreateComponent } from './components/views/administrador/administrador-create/administrador-create.component';
+import { AdministradorDeleteComponent } from './components/views/administrador/administrador-delete/administrador-delete.component';
+import { FluxocaixaReadAllComponent } from './components/views/fluxocaixa/fluxocaixa-read-all/fluxocaixa-read-all.component';
+import { FluxocaixaCreateComponent } from './components/views/fluxocaixa/fluxocaixa-create/fluxocaixa-create.component';
+import { AvaliacaoComponent } from './components/views/avaliacao/avaliacao.component';
+import { RelatoriosComponent } from './components/views/relatorios/relatorios.component';
+import { EstoqueComponent } from './components/views/estoque/estoque.component';
 
 
 @NgModule({
@@ -54,7 +74,25 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     AgendamentoReadComponent,
     AgendamentoCreateComponent,
     ClienteReadComponent,
-    ServicoReadComponent
+    ServicoReadComponent,
+    ServicoReadAllComponent,
+    ClienteCreateComponent,
+    AdministradorReadAllComponent,
+    ServicoReadAdmComponent,
+    CupomReadAdmComponent,
+    CupomCreateComponent,
+    CupomUpdateComponent,
+    CupomDeleteComponent,
+    ServicoCreateComponent,
+    ServicoUpdateComponent,
+    ServicoDeleteComponent,
+    AdministradorCreateComponent,
+    AdministradorDeleteComponent,
+    FluxocaixaReadAllComponent,
+    FluxocaixaCreateComponent,
+    AvaliacaoComponent,
+    RelatoriosComponent,
+    EstoqueComponent
    
   ],
   imports: [
@@ -80,7 +118,11 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatDatepickerModule,
     MatNativeDateModule,
     MatProgressSpinnerModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule
+
+    
     
     
   ],

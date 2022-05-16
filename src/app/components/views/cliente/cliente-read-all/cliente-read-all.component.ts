@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from '../cliente.model';
 import { ClinteService } from '../clinte.service';
 
@@ -13,8 +13,9 @@ export class ClienteReadAllComponent implements OnInit {
   displayedColumns: string [] = ["id","nome","dataNascimento","usuarios","acoes"];
   id_end:String = ''
   clientes:Cliente[] = []
+  
 
-  constructor(private service:ClinteService,private route:ActivatedRoute) { }
+  constructor(private service:ClinteService,private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
     this.id_end = this.route.snapshot.paramMap.get('id_end')!
@@ -25,6 +26,10 @@ export class ClienteReadAllComponent implements OnInit {
     this.service.findAllByEndereco(this.id_end).subscribe((resposta)=>{
       this.clientes = resposta;
     })
+  }
+
+  navegarParaClienteCreate():void{
+      this.router.navigate([`enderecos/${this.id_end}/clientes/create`]);
   }
 
 }

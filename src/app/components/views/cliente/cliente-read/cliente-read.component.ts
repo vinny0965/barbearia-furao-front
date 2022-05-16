@@ -53,6 +53,10 @@ export class ClienteReadComponent implements OnInit {
   prevStep() {
     this.step--;
   }
+
+  cancel():void{
+    this.router.navigate(['/agendamentos'])
+  }
   
 
   constructor(private service: ClinteService, private route: ActivatedRoute, private router: Router) { }
@@ -68,16 +72,16 @@ export class ClienteReadComponent implements OnInit {
   findById():void{
     this.service.findById(this.cliente.id!).subscribe((resposta)=>{
       this.cliente=resposta
-      console.log(resposta);
     })
   }
 
   findAll():void{
     this.service.findAgendamentosByEndereco(this.cliente.id!).subscribe((resposta)=>{
       this.agendamentos = resposta
-      console.log(resposta);
     })
   }
+
+  
 
   
 

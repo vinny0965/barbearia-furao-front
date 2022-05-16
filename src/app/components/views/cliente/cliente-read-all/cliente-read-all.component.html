@@ -1,8 +1,8 @@
 <div class="content">
     <div class="title">
-        <h1>Usuarios</h1>
+        <h1>Clientes</h1>
     </div>
-    <button class="mat-elevation-z8"  mat-flat-button color="primary">Cadastrar Usuários</button>
+    <button class="mat-elevation-z8" (click)="navegarParaClienteCreate()" mat-flat-button color="primary" >Cadastrar Clientes</button>
 
     <div class="mat-elevation-z8 content-table">
         <table class="table" mat-table [dataSource]="clientes" >
@@ -30,10 +30,10 @@
 
               <!-- usuarios Column -->
             <ng-container matColumnDef="usuarios">
-              <th mat-header-cell *matHeaderCellDef> Usuários </th>
+              <th mat-header-cell *matHeaderCellDef> Dados </th>
               <td mat-cell *matCellDef="let row"> {{row.usuarios}}
-                <a class="usuarios" routerLink="{{row.id}}">
-                  <i class="material-icons">people</i>   
+                <a class="usuarios" routerLink="id/{{row.id}}">
+                  <i class="material-icons">visibility</i>   
                 </a>
               </td>
             </ng-container>

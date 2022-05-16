@@ -9,5 +9,5 @@ export interface Cliente{
     sexo:String,
     telefone:String,
     id_endereco:String,
-    endereco:Endereco
+    endereco?:Endereco
 }

@@ -36,4 +36,9 @@ export class ClinteService {
     const url = `${this.baseUrl}/api/agendamento?cliente=${id_cli}`
     return this.http.get<Agendamento[]>(url)
   }
+
+  createCliente(cliente:Cliente,id_end:String){
+    const url = `${this.baseUrl}/api/cliente/save?idEndereco=${id_end}`
+    return this.http.post<Cliente>(url, cliente)
+  }
 }
